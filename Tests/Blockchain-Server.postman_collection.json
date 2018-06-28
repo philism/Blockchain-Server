@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "c56b7a3a-772a-4787-8b10-9ed6d62e4da2",
+		"name": "Blockchain Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "George",
+							"type": "text"
+						},
+						{
+							"key": "from",
+							"value": "Kramer",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "150.00",
+							"type": "text"
+						},
+						{
+							"key": "transactionType",
+							"value": "domestic",
+							"type": "text"
+						},
+						{
+							"key": "fees",
+							"value": "0.5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/mine",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blockchain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/blockchain",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blockchain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/nodes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nodes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Node",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"address\": \"localhost:8090\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/nodes/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nodes",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resolve Nodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/nodes/resolve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nodes",
+						"resolve"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
